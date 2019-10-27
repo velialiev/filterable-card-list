@@ -1,0 +1,28 @@
+<app-filters [filtersForm]="filtersForm"></app-filters>
+
+<div class="categories">
+  <ng-container *ngIf="filteredCategorizedCards$ | async as categorizedCards">
+    <div class="category" *ngFor="let category of objectKeys(categorizedCards)">
+      <div class="title">
+        {{category}}
+      </div>
+      <div class="cards">
+        <app-card *ngFor="let card of isCategoryShown[category] ? categorizedCards[category] : categorizedCards[category].slice(0, 3)"
+                  [card]="card"
+                  (click)="selectCard(card.id)"></app-card>
+
+        <span class="notification" *ngIf="!categorizedCards[category].length">Нет результатов по данному запросу.</span>
+      </div>
+      <button *ngIf="categorizedCards[category].length > 3"
+              class="btn btn-secondary"
+              (click)="isCategoryShown[category] = !isCategoryShown[category]">
+        <ng-container *ngIf="!isCategoryShown[category]">
+          Показать больше
+        </ng-container>
+        <ng-container *ngIf="isCategoryShown[category]">
+          Скрыть
+        </ng-container>
+      </button>
+    </div>
+  </ng-container>
+</div>

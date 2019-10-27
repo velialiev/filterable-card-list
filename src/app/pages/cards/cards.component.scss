@@ -1,0 +1,44 @@
+@import "../../../styles";
+
+.categories {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.category {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .title {
+    margin-bottom: 20px;
+    color: $blue;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .cards {
+    display: flex;
+    width: 795px;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+
+    app-card {
+      margin-right: 15px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+app-filters {
+  display: block;
+  margin-bottom: 25px;
+}
+
+.notification {
+  width: 100%;
+  text-align: center;
+}

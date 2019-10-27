@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  background-color: #6e6e6b;
+  padding: 30px 0;
+
+  .block {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 810px;
+    border-bottom: 1px solid #cbcbcb;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .title {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      color: #cbcbcb;
+    }
+
+    .filters {
+      display: flex;
+      flex-flow: row wrap;
+      flex-grow: 1;
+
+      .filter {
+        margin-left: 10px;
+        flex-grow: 1;
+        display: flex;
+      }
+    }
+  }
+}

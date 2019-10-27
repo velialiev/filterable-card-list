@@ -1,0 +1,32 @@
+<div class="wrapper" [formGroup]="filtersForm">
+  <div class="block">
+    <p class="title">Поиск по ключевым словам:</p>
+    <div class="filters">
+      <app-input formControlName="search"
+                 class="filter"
+                 [placeholder]="'Поиск'"></app-input>
+    </div>
+  </div>
+
+  <div class="block">
+    <p class="title">
+      Фильтровать статьи по:
+    </p>
+    <div class="filters" *ngIf="filters$ | async as filters">
+      <app-select class="filter"
+                  formControlName="level"
+                  [baseOption]="'Любой Уровень'"
+                  [options]="filters.levels"></app-select>
+
+      <app-select class="filter"
+                  formControlName="category"
+                  [baseOption]="'Все Категории'"
+                  [options]="filters.categories"></app-select>
+
+      <app-select class="filter"
+                  formControlName="language"
+                  [baseOption]="'Все Языки'"
+                  [options]="filters.languages"></app-select>
+    </div>
+  </div>
+</div>

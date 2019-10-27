@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+$blue: #0300cc;
+
+body {
+  font-family: Tahoma, sans-serif;
+  margin: 0;
+}
+
+.btn {
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid $blue;
+  padding: 5px 50px;
+  color: $blue;
+  border-radius: 15px;
+  transition: color, background-color 0.3s;
+
+  &:hover {
+    color: #fff;
+    background-color: $blue;
+  }
+}
